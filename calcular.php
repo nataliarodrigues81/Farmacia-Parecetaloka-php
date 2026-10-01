@@ -14,7 +14,6 @@ else
 {
     $cartao = "não";
     $desconto = $desconto + 0;
-
 }
 
 if ($idade == 0)
@@ -37,7 +36,14 @@ $totalfinal = $total - $valordesconto;
 
 ?>
 
-<link rel="stylesheet" href="style.css">
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Farmácia Parecetaloka</title>
+</head>
+<body>
 
 <h1>Farmácia Parecetaloka</h1>
 
@@ -51,5 +57,36 @@ $totalfinal = $total - $valordesconto;
     echo "Total final: R$ " . number_format($totalfinal, 2, ',', '.');
     ?>
     <br>
-    <a href = "index.html">Voltar</a>
+    <a href="index.html">Voltar</a>
+
+    <!-- usando for -->
+    
+    <h3>Opções de Parcelamento:</h3>
+    <?php 
+    
+    for ($i = 1; $i <= 6; $i++) {
+        $valorParcela = $totalfinal / $i;
+        echo "{$i}x de R$ " . number_format($valorParcela, 2, ',', '.') . "<br>";
+    }
+    
+    ?>
+    
+
+    <!-- usando while -->
+     <!--
+    <h3>Opções de Parcelamento:</h3>
+    <?php 
+    /*
+    $j = 1;
+    while ($j <= 6) {
+        $valorParcela = $totalfinal / $j;
+        echo "{$j}x de R$ " . number_format($valorParcela, 2, ',', '.') . "<br>";
+        $j++;
+    }
+    */
+    ?>
+    -->
 </div>
+
+</body>
+</html>
